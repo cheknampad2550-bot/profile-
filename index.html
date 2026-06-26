@@ -95,7 +95,7 @@
         }
         .info-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* เปลี่ยนให้ชิดบนเผื่อข้อมูลยาวจนขึ้นบรรทัดใหม่ */
             margin-bottom: 14px;
             color: #4b5563;
             font-size: 15px;
@@ -116,8 +116,20 @@
             flex-shrink: 0;
             font-size: 18px;
         }
+        .info-text {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            min-height: 38px; /* ให้ความสูงอย่างน้อยเท่ากับไอคอน */
+        }
         .info-text strong {
             color: #1f2937;
+            width: 75px; /* กำหนดความกว้างของหัวข้อให้เท่ากัน */
+            flex-shrink: 0; /* ป้องกันไม่ให้หัวข้อโดนบีบ */
+        }
+        .info-value {
+            flex-grow: 1;
+            word-break: break-word; /* ป้องกันข้อความยาวทะลุกรอบ */
         }
     </style>
 </head>
@@ -127,4 +139,54 @@
         <div class="header-cover"></div>
         
         <div class="profile-img-container">
-            <img
+            <img class="profile-img" src="https://via.placeholder.com/150/e9d5ff/6b21a8?text=รูป" alt="รูปโปรไฟล์ สุภัสสรา">
+        </div>
+        
+        <div class="profile-content">
+            <div class="profile-name">สุภัสสรา เจ๊กนาม</div>
+            <div class="student-id">รหัสนักศึกษา: 65XXXXXXX</div>
+            
+            <div class="info-group">
+                <div class="group-title">ข้อมูลการศึกษา</div>
+                
+                <div class="info-item">
+                    <div class="info-icon">🎓</div>
+                    <div class="info-text">
+                        <strong>คณะ:</strong>
+                        <span class="info-value">วิทยาศาสตร์และเทคโนโลยี</span>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">📚</div>
+                    <div class="info-text">
+                        <strong>สาขา:</strong>
+                        <span class="info-value">วิทยาการคอมพิวเตอร์</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-group">
+                <div class="group-title">ข้อมูลติดต่อ</div>
+                
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-text">
+                        <strong>อีเมล:</strong>
+                        <span class="info-value">supassara.j@example.com</span>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-text">
+                        <strong>เบอร์โทร:</strong>
+                        <span class="info-value">08X-XXX-XXXX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
